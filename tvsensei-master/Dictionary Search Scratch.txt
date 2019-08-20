@@ -1,0 +1,106 @@
+<!--script>
+	function pronounce1(name) {
+		var n = "pronunciation" + name;
+		document.getElementById(n).play();
+	}
+</script-->
+<!--script>
+	function iWantItAll(){
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange=
+			function(){
+				if(this.readyState == 4 && this.status == 200){
+					var myArr = JSON.parse(this.responseText);
+					//document.getElementById("dicTest").innerHTML = myArr[10000].ent_seq;
+					//findDef(this);
+					jsontestsimple(myArr);
+				}
+			};
+		xmlhttp.open("GET", "JMdictTest.txt", true);
+		xmlhttp.send();
+		
+		}
+		
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange=
+			function(){
+				if(this.readyState == 4 && this.status == 200){
+					var myArr = JSON.parse(this.responseText);
+					//document.getElementById("dicTest").innerHTML = myArr[10000].ent_seq;
+					//findDef(this);
+					jsontest(myArr);
+				}
+			};
+		xmlhttp.open("GET", "JMdictTest.txt", true);
+		xmlhttp.send();
+		
+		function jsontest(json){
+		
+			var i, txt;
+			txt ="";
+			
+			txt += "<table class=\"table table-striped\">";
+			txt += "<thead><tr><th>Number</th><th>Hiragana</th><th>Kanji</th><th>Def</th></tr></thead>";
+			txt += "<tbody>";
+			for (i = 0; i < 100; i++){
+				//alert(json[i].ent_seq);
+				txt += "<tr>";
+				txt += "<td>" + json[i].ent_seq +"</td>";
+				txt += "<td>" + json[i].r_ele[0].reb + "</td>";
+				if (typeof json[i].k_ele !== "undefined"){
+					txt+= "<td>" + json[i].k_ele[0].keb + "</td>";
+				}else{
+					txt += "<td></td>";
+				}
+				txt += "<td>" + json[i].sense[0].gloss + "</td>";
+				txt += "</tr>";
+			}
+			
+			txt+= "</tbody></table>";
+			
+			document.getElementById("dicTest").innerHTML = txt;
+			
+		}
+		function jsontestsimple(json){
+			var i, txt;
+			txt = "";
+			
+			for (i = 0; i <json.length; i++){
+				txt += "(" + i + ") --- " + json[i].ent_seq+ " --- " + json[i].r_ele[0].reb + " --- ";
+				
+				if (typeof json[i].k_ele !== "undefined"){
+					txt += json[i].k_ele[0].keb + " --- ";
+				}else{
+					txt += "No Kanji. --- ";
+				}
+				
+				txt += json[i].sense[0].gloss + "<br>";
+				
+			}
+			
+			document.getElementById("dicTest").innerHTML = txt;
+		}
+		
+	/*function findDef(xml){
+		 var x, i, txt, xmlDoc; 
+    xmlDoc = xml.responseXML;
+    txt = "";
+    x = xmlDoc.getElementsByTagName("ent_seq");
+    for (i = 0; i < x.length; i++) { 
+        txt += x[i].childNodes[0].nodeValue + "<br>";
+    }
+	 document.getElementById("dicTest").innerHTML = txt;
+}*/
+	/*function findDef(xml){
+		var i;
+		var xmlDoc = xml.responseXML;
+		var table="<tr><th>First</th><th>Second</th></tr>";
+		var x = xmlDoc.getElementsByTagName("entry");
+		for (i = 0; i< 5; i++){
+			table += "<tr><td>" +
+			x[i].getElementsByTagName("keb")[0].childNodes[0].nodeValue+"</td><td>" +
+			x[i].getElementsByTagName("reb")[0].childNodes[0].nodeValue+"</td><tr>;
+		}
+		document.getElementById("dicTest").innerHTML = table;
+	}*/
+</script-->	
