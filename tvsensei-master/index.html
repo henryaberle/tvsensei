@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head>
-	<title>TV Sensei</title>
+	<title>TVSensei</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="">
@@ -14,11 +14,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	
 	<script src="external_GET.js"></script>
 	<script src="multi_test_check.js"></script>
 	<script src="video_player.js"></script>
+	<script>
+			// When the user clicks on <div>, open the popup
+			function myFunction() {
+			  var popup = document.getElementById("myPopup");
+			  popup.classList.toggle("show");
+			}
+		</script>
+	<script>
+			function play(){				 
+			var audio = document.getElementById("audio");
+			audio.play();
+							   }
+		</script>
+	<script src="https://kit.fontawesome.com/4912714a0b.js"></script>
 
 </head>
 
@@ -30,11 +45,11 @@
 	<nav class="navbar navbar-expand-sm bg-dark text-white" id="navbar">
 	
 		<div class="navbar-header">
-			<a class="navbar-brand" id="title">TV-Sensei</a>
+			<a class="navbar-brand" id="title">TVSensei</a>
 		</div>
 		<ul class="navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">Browse</a>
+				<a class="nav-link text-warning" href="">Browse</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-warning" href="#">Settings</a>
@@ -60,14 +75,12 @@
 <!--  Body -->
 <div class="container-fluid">
 	<div class="row">
-	<div class="col-1 bg-dark" name="columns"></div><!-- Column Left for style-->
-	<div class="col-10 bg-dark"><!-- Center -->	
+	<div class="col-12 bg-dark"><!-- Center -->	
 	<!-- The next line inserts another html file to be displayed. This keeps documents 
 		separated for readability and in theory this line can be changed easily to switch
 		to a different video file. -->
 		<div tvs-include="tvs_video_test_1.html"></div>
 		</div><!-- end of center-->
-		<div class="col-1 bg-dark" name="columns"></div><!-- Buffer Column Right for symmetry-->
 	</div>	
 </div>
 
