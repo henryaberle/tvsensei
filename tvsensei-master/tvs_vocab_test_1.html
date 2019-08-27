@@ -1,37 +1,29 @@
 <br>
 <h3>VOCAB</h3>
-<table class="table table-striped table-hover table-dark text-white">
+<table class="table table-striped table-hover table-dark text-white" style="font-size: 12px">
 	<thead>
 		<tr>
 			<th>Hiragana</th>
 			<th>Romaji</th>
 			<th>Definition</th>
-			<th>Audio</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td>&nbsp; &nbsp; &nbsp;あじ</td>
+			<td class="popup" onclick="myFunction()">&nbsp; &nbsp; &nbsp;あじ
+					<span class="popuptext" id="myPopup">Popup Example 1</span>
+			</td>
 			<td>a-ji</td>
 			<td>Taste/flavor; horse mackerel</td>
-			<td>
-				<audio controls>
-					<source id="pron-aji" src="mp3/aji.mp3" type="audio/mpeg" preload="auto">
-				</audio>
-			</td>
 		</tr>
 		<tr>
 			<td>
-				&nbsp; &nbsp; &nbsp;みせ
-				
+				&nbsp; &nbsp; &nbsp;みせ 				
+				<span id="audioHover" onclick="play()"><i class="fas fa-volume-up"></i></span>
+				<audio id="audio" src="HarrisLilliburleroShort.mp3" ></audio>
 			</td>
 			<td>o-su-su-me</td>
 			<td>Recommendation</td>
-			<td>
-				<audio controls>
-					<source id="pron_osusume" src="mp3/osusume.mp3" type="audio/mpeg" preload="auto">
-				</audio>
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -40,11 +32,6 @@
 			</td>
 			<td>me-nyu-u</td>
 			<td>Menu item; menu</td>
-			<td>
-				<audio controls>
-					<source id="pron_menue" src="mp3/menue.mp3" type="audio/mpeg" preload="auto">
-				</audio>
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -52,11 +39,6 @@
 			</td>
 			<td>mi-se</td>
 			<td>Store; restaurant</td>
-			<td>
-				<audio controls>
-					<source id="pron_mise" src="mp3/mise.mp3" type="audio/mpeg" preload="auto">
-				</audio>
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -64,12 +46,8 @@
 			</td>
 			<td>sa-ka-na</td>
 			<td>Fish</td>
-			<td>
-				<audio controls>
-					<source id="pron_sakana" src="mp3/sakana.mp3" type="audio/mpeg" preload="auto">
-				</audio>
-			</td>
 		</tr>
 	</tbody>
+
 </table>
 
