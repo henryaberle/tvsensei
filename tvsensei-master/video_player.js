@@ -3,8 +3,9 @@
 	
 	/* All the scripting for video */
 	
-var vid, repeatButton, timecodes, repeatEventListener;
+var vid, repeatButton, timecodes, repeatEventListener, playStatus;
 var repeatVideo = false;
+var playStatus = false;
 var vidLine = "vidLine";
 
 var subs = [];
@@ -14,6 +15,7 @@ function initializeVid(x=[]){
 	
 	vid = document.getElementById("currentVideo");
 	repeatButton = document.getElementById("repeatButtonVid");
+	playButton = document.getElementById("playButton")
 	timecodes = x;
 	assToSubs("Hakone_Subbing.ass","eng");
 	assToSubs("Hakone_Jap_Subs.ass","jap");
@@ -29,11 +31,28 @@ function jumpVideoTime(x){
 
 function playVid(){
 	
-	vid.play();
+	if(playStatus){
+		vid.pause();
+		playButton.className = "btn btn-success";
+		playButton.value = "Play";
+		playStatus = false;
+		
+	}
+	else{
+		vid.play();
+		playButton.className = "btn btn-danger";
+		playButton.value = "Pause";
+		playStatus = true;
+
+	}
+
+	
+	
+
 }
 
 function pauseVid(){
-	vid.pause();
+	pass;
 }
 
 function restartVid(){
@@ -59,7 +78,7 @@ function toggleRepeatVid(){
 	
 	if(repeatVideo){
 		
-		repeatButton.className = "btn btn-danger";
+		repeatButton.className = "btn btn-info";
 		
 		
 		
