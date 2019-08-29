@@ -2,6 +2,15 @@
    border-bottom: 0px;
 }
 
+#controlBar {
+  border-radius: 5px;
+}
+
+.video{
+  border-radius: 5px; 
+  overflow: hidden; 
+}
+
 .popup {
    position: relative;
    display: inline-block;
